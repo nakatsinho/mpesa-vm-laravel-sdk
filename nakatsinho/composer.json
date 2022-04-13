@@ -1,0 +1,22 @@
+{
+    "name": "nakatsinho/mpesa-laravel",
+    "description": "This is the latest simplified way to embed Mpesa payments in your laravel application.",
+    "type": "library",
+    "require": {
+        "php": ">=7.0",
+        "illuminate/support": ">=5.8"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Nakatsinho\\MpesaLaravel\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "nakatsinho",
+            "email": "nakatsinho@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}
