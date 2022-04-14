@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "12524947d8c752f84bc21aaaede06bfa",
+    "content-hash": "4b0425ab324116032c954b2d0a015985",
     "packages": [
         {
             "name": "brick/math",
@@ -5586,6 +5586,48 @@
             "time": "2022-03-03T13:19:32+00:00"
         },
         {
+            "name": "nakatsinho/mpesa-laravel",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "./nakatsinho",
+                "reference": "a141cf1188409ff92d7ae1be23d112d4d0bdd02e"
+            },
+            "require": {
+                "illuminate/support": ">=5.8",
+                "php": ">=7.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Nakatsinho\\MpesaLaravel\\Providers\\MPesaServiceProvider"
+                    ],
+                    "aliases": {
+                        "MPesaSDK": "Nakatsinho\\MpesaLaravel\\Facades\\MPesaSDK"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Nakatsinho\\MpesaLaravel\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "nakatsinho",
+                    "email": "nakatsinho@gmail.com"
+                }
+            ],
+            "description": "This is the latest simplified way to embed Mpesa payments in your laravel application.",
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
             "name": "nunomaduro/collision",
             "version": "v6.2.0",
             "source": {
@@ -7738,7 +7780,7 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": "^8.0.2"
+        "php": "^7.2 | ^8.0.2"
     },
     "platform-dev": [],
     "plugin-api-version": "2.1.0"

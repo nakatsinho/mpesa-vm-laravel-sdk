@@ -12,6 +12,16 @@
             "Nakatsinho\\MpesaLaravel\\": "src/"
         }
     },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Nakatsinho\\MpesaLaravel\\Providers\\MPesaServiceProvider"
+            ],
+            "aliases": {
+                "MPesaSDK": "Nakatsinho\\MpesaLaravel\\Facades\\MPesaSDK"
+            }
+        }
+    },
     "authors": [
         {
             "name": "nakatsinho",
