@@ -4,7 +4,8 @@
     "type": "library",
     "require": {
         "php": ">=7.0",
-        "illuminate/support": ">=5.8"
+        "illuminate/support": ">=5.8",
+        "nakatsinho/mpesa-php": "dev-master"
     },
     "license": "MIT",
     "autoload": {
