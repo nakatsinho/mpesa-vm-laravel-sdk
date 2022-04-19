@@ -40,7 +40,7 @@ class PublishSDK extends Command{
         $this->info('We have generated a fresh config service file.');
 
         $bladeFile = file_get_contents(__DIR__.'/../Files/Views/index.stub');
-        $this->createFile($resDir. DIRECTORY_SEPARATOR, 'views/payments/index.php', $bladeFile);
+        $this->createFile($resDir. DIRECTORY_SEPARATOR, 'views/payments/index.blade.php', $bladeFile);
         $this->info('We have generated a fresh blade file.');
 
         $this->info('Generating fresh autoload files...');
