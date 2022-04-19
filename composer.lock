@@ -372,12 +372,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/nakatsinho/php_mpesa.git",
-                "reference": "0697bf48598af3d8c442fbcec79c5e8a4e387ae4"
+                "reference": "5d92f8e8c4278e7b80be8699e19c91b7e978f7ed"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nakatsinho/php_mpesa/zipball/0697bf48598af3d8c442fbcec79c5e8a4e387ae4",
-                "reference": "0697bf48598af3d8c442fbcec79c5e8a4e387ae4",
+                "url": "https://api.github.com/repos/nakatsinho/php_mpesa/zipball/5d92f8e8c4278e7b80be8699e19c91b7e978f7ed",
+                "reference": "5d92f8e8c4278e7b80be8699e19c91b7e978f7ed",
                 "shasum": ""
             },
             "require": {
@@ -406,7 +406,7 @@
                 "issues": "https://github.com/nakatsinho/php_mpesa/issues",
                 "source": "https://github.com/nakatsinho/php_mpesa/tree/master"
             },
-            "time": "2022-04-18T18:44:50+00:00"
+            "time": "2022-04-18T19:52:32+00:00"
         },
         {
             "name": "nesbot/carbon",
