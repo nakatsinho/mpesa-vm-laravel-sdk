@@ -78,6 +78,12 @@ php -S localhost:8030 -t public/
 
 Open you Browser, and type http://127.0.0.1:8030/payment !!! ENJOY...
 
+## Dependence & Authors
+It would be great to receive criticisms and new suggestions as a way to help improve this package, which is still under development!
+And my credits go to abdulmuied, responsible for building the SDK in PhP...
+
+**Powered by** <a href="https://github.com/nakatsinho">Kelton Mauro Cumbe 🇲🇿</a>, aka: The Problems Solver ! WhatsApp me <a href="https://wa.me/+258825248888"> any time </a>.
+    
 
 
 
@@ -90,4 +96,5 @@ Open you Browser, and type http://127.0.0.1:8030/payment !!! ENJOY...
 
 
 
-Share and help improve... (coming soon)
+
+Share and help me to improve... (stable version coming soon)
