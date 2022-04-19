@@ -20,7 +20,8 @@ composer create-project laravel/laravel:^8.0 example-app
 ```
 composer require nakatsinho/mpesa-laravel
 ```
-But with that we didn't reach the icing on the cake, together with the package, there are a series of files that we need to publish in your project, which will allow you to access the features of that package, through the following command via artisan:
+2. But with that we didn't reach the icing on the cake, together with the package, there are a series of files that we need to publish in your project, which will allow you to access the features of that package, through the following command via artisan:
+
 ```
 php artisan mpesa-sdk:publish
 ```
@@ -28,9 +29,54 @@ php artisan mpesa-sdk:publish
 #### GOOD DJOB 🔥...
 
 Now we have the basics to test! Note that the command above brought us the following files:
+- config/mpesa.php - The config file that help you to place your M-Pesa Credentials that can be find on VM Portal, just for test;
+- controllers/PaymentController.php - A controller to call the payment form and make request;
+- views/payments/index.blade.php - A Blade view with any form to make test request for c2b method;
 
+## Explanation and Configuration:
 
+Be sure to get and set your files like those following:
+#### config/mpesa.php
 
+```
+<?php
+
+return [
+    'public_key' => env('MPESA_PUBLIC_KEY'),
+    'api_host' => env('MPESA_API_HOST'),
+    'api_key' => env('MPESA_API_KEY'),
+    'origin' => env('MPESA_ORIGIN'),
+    'service_provider_code' => env('MPESA_SERVICE_PROVIDER_CODE'),
+    'initiator_identifier' => env('MPESA_INITIATOR_IDENTIFIER'),
+    'security_credential' => env('MPESA_SECURITY_CREDENTIAL')
+];
+
+```
+#### In you '.env' must be like this...
+
+```
+MPESA_PUBLIC_KEY="XXX XXXXXX XXXXXX" - You will obtain this on VM Portal
+MPESA_API_HOST="api.sandbox.vm.co.mz" - Leave it
+MPESA_API_KEY="XXX XXXXXX XXXXXX" - You will obtain this on VM Portal
+MPESA_ORIGIN="XXX XXXXXX XXXXXX" - You will obtain this on VM Portal
+MPESA_SERVICE_PROVIDER_CODE=(Random 6 digits)
+MPESA_INITIATOR_IDENTIFIER="XXXXX XXX XXXXX"
+MPESA_SECURITY_CREDENTIAL="XXXX XXXX XXXX"
+```
+
+After that, go to you <b>routes/web.php</b> file and place this
+```
+Route::resource('payment',PaymentController::class);
+```
+
+#### And Hozaaaa 🔥 🔥 🔥... "É fácil!"
+
+Just type this on you terminal:
+```
+php -S localhost:8030 -t public/
+```
+
+Open you Browser, and type http://127.0.0.1:8030/payment !!! ENJOY...
 
 
 
