@@ -11,7 +11,7 @@ class PublishSDK extends Command{
 
     protected $name = 'mpesa-sdk:publish';
 
-    protected $description = 'Publish files from the src folder';
+    protected $description = 'Publishing files from the src folder';
 
     public $composer;
 
@@ -38,6 +38,10 @@ class PublishSDK extends Command{
         $configMpesa = file_get_contents(__DIR__.'/../Files/Config/Mpesa.stub');
         $this->createFile($confDir. DIRECTORY_SEPARATOR, 'mpesa.php', $configMpesa);
         $this->info('We have generated a fresh config service file.');
+
+        $bladeFile = file_get_contents(__DIR__.'/../Files/Views/index.stub');
+        $this->createFile($resDir. DIRECTORY_SEPARATOR, 'views/payments/index.php', $bladeFile);
+        $this->info('We have generated a fresh blade file.');
 
         $this->info('Generating fresh autoload files...');
         $this->composer->dumpOptimized();

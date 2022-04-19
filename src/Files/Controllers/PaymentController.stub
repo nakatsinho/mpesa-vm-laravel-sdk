@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Payment;
 use Illuminate\Http\Request;
+use Nakatsinho\MpesaLaravel\Facades\MpesaSDK;
 
 class PaymentController extends Controller
 {
@@ -14,7 +14,7 @@ class PaymentController extends Controller
      */
     public function index()
     {
-        //
+        return view('payments.index');
     }
 
     /**
@@ -35,7 +35,9 @@ class PaymentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $payment = MpesaSDK::c2b($request->amount,$request->number, "NAKATSINHO", bin2hex(random_bytes(6)));
+        
+        return redirect()->back();
     }
 
     /**
@@ -44,7 +46,7 @@ class PaymentController extends Controller
      * @param  \App\Models\Payment  $payment
      * @return \Illuminate\Http\Response
      */
-    public function show(Payment $payment)
+    public function show( $payment)
     {
         //
     }
@@ -55,7 +57,7 @@ class PaymentController extends Controller
      * @param  \App\Models\Payment  $payment
      * @return \Illuminate\Http\Response
      */
-    public function edit(Payment $payment)
+    public function edit( $payment)
     {
         //
     }
@@ -67,7 +69,7 @@ class PaymentController extends Controller
      * @param  \App\Models\Payment  $payment
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Payment $payment)
+    public function update(Request $request,  $payment)
     {
         //
     }
@@ -78,7 +80,7 @@ class PaymentController extends Controller
      * @param  \App\Models\Payment  $payment
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Payment $payment)
+    public function destroy( $payment)
     {
         //
     }
