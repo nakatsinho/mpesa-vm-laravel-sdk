@@ -20,10 +20,14 @@ composer create-project laravel/laravel:^8.0 example-app
 ```
 composer require nakatsinho/mpesa-laravel
 ```
-But with that we didn't reach the icing on the cake 🔥, together with the package, there are a series of files that we need to publish in your project, which will allow you to access the features of that package, through the following command via artisan:
+But with that we didn't reach the icing on the cake, together with the package, there are a series of files that we need to publish in your project, which will allow you to access the features of that package, through the following command via artisan:
 ```
 php artisan mpesa-sdk:publish
 ```
+
+#### GOOD DJOB 🔥...
+
+Now we have the basics to test! Note that the command above brought us the following files:
 
 
 
