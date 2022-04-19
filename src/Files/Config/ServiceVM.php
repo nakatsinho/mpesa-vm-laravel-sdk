@@ -14,7 +14,7 @@ class ServiceVM
 
     public function __construct(string $configPath = null)
     {
-        $this->configPath = $configPath ?? config_path('mpesa-config.php');
+        $this->configPath = $configPath ?? config_path('mpesa.php');
         $this->transaction = new Transaction(Config::loadFromFile($this->configPath));
     }
 
