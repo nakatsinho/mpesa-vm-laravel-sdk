@@ -36,7 +36,7 @@ class PublishSDK extends Command{
         $this->info('Payment Controller was published right now.');
 
         $configMpesa = file_get_contents(__DIR__.'/../Files/Config/Mpesa.stub');
-        $this->createFile($confDir. DIRECTORY_SEPARATOR."", 'mpesa.php', $configMpesa);
+        $this->createFile($confDir. DIRECTORY_SEPARATOR, 'mpesa.php', $configMpesa);
         $this->info('We have generated a fresh config service file.');
 
         $this->info('Generating fresh autoload files...');
