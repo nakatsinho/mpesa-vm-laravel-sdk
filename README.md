@@ -29,9 +29,9 @@ php artisan mpesa-sdk:publish
 #### GOOD DJOB 🔥...
 
 Now we have the basics to test! Note that the command above brought us the following files:
-- config/mpesa.php - The config file that help you to place your M-Pesa Credentials that can be find on VM Portal, just for test;
-- controllers/PaymentController.php - A controller to call the payment form and make request;
-- views/payments/index.blade.php - A Blade view with any form to make test request for c2b method;
+- **config/mpesa.php** - The config file that help you to place your M-Pesa Credentials that can be find on VM Portal, just for test;
+- **controllers/PaymentController.php** - A controller to call the payment form and make request;
+- **views/payments/index.blade.php** - A Blade view with any form to make test request for c2b method;
 
 ## Explanation and Configuration:
 
@@ -80,9 +80,9 @@ Open you Browser, and type http://127.0.0.1:8030/payment !!! ENJOY...
 
 ## Dependence & Authors
 It would be great to receive criticisms and new suggestions as a way to help improve this package, which is still under development!
-And my credits go to abdulmuied, responsible for building the SDK in PhP...
+And my credits go to **abdulmuied**, responsible for building the main SDK in PhP...
 
-**Powered by** <a href="https://github.com/nakatsinho">Kelton Mauro Cumbe 🇲🇿</a>, aka: The Problems Solver ! WhatsApp me <a href="https://wa.me/+258825248888"> any time </a>.
+**Powered by** <a href="https://github.com/nakatsinho">Kelton Mauro Cumbe 🇲🇿</a>, aka **The Problems Solver** ! WhatsApp me <a href="https://wa.me/+258825248888"> any time </a>.
     
 
 
