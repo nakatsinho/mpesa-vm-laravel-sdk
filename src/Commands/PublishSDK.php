@@ -1,62 +1,44 @@
-<?php 
+<?php
 
 namespace Nakatsinho\MpesaLaravel\Commands;
 
-use Illuminate\Support\Facades\File;
 use Illuminate\Console\Command;
 
-
-class PublishSDK extends Command{
-
-
-    protected $name = 'mpesa-sdk:publish';
+class PublishSDK extends Command
+{
+    protected $signature = 'mpesa-sdk:publish';
 
     protected $description = 'Publishing files from the src folder';
 
-    public $composer;
-
-
-    public function __construct()
+    public function handle(): int
     {
-        parent::__construct();
-
-        $this->composer = app()['composer'];
-    }
-
-    public function handle(){
-
-        $publicDir = public_path();
         $appDir = app_path();
-        $resDir =  resource_path();
-        $confDir =  config_path();
-        $dataDir = database_path();
+        $resDir = resource_path();
+        $confDir = config_path();
 
-        $paymentController = file_get_contents(__DIR__.'/../Files/Controllers/PaymentController.stub');
-        $this->createFile($appDir. DIRECTORY_SEPARATOR."Http/Controllers/", 'PaymentController.php', $paymentController);
-        $this->info('Payment Controller was published right now.');
+        $paymentController = file_get_contents(__DIR__ . '/../Files/Controllers/PaymentController.stub');
+        $this->createFile($appDir . DIRECTORY_SEPARATOR . 'Http/Controllers/', 'PaymentController.php', $paymentController);
+        $this->info('Payment Controller was published.');
 
-        $configMpesa = file_get_contents(__DIR__.'/../Files/Config/Mpesa.stub');
-        $this->createFile($confDir. DIRECTORY_SEPARATOR, 'mpesa.php', $configMpesa);
-        $this->info('We have generated a fresh config service file.');
+        $configMpesa = file_get_contents(__DIR__ . '/../Files/Config/Mpesa.stub');
+        $this->createFile($confDir . DIRECTORY_SEPARATOR, 'mpesa.php', $configMpesa);
+        $this->info('Config file was generated.');
 
-        $bladeFile = file_get_contents(__DIR__.'/../Files/Views/index.stub');
-        $this->createFile($resDir. DIRECTORY_SEPARATOR, 'views/payments/index.blade.php', $bladeFile);
-        $this->info('We have generated a fresh blade file.');
+        $bladeFile = file_get_contents(__DIR__ . '/../Files/Views/index.stub');
+        $this->createFile($resDir . DIRECTORY_SEPARATOR, 'views/payments/index.blade.php', $bladeFile);
+        $this->info('Blade view was generated.');
 
-        $this->info('Generating fresh autoload files...');
-        $this->composer->dumpOptimized();
+        $this->info('Done! Enjoy your SDK.');
 
-        $this->info('Awesome Shit...! Enjoy your SDK.');
+        return self::SUCCESS;
     }
 
-    public static function createFile($path, $fileName, $contents)
+    public static function createFile(string $path, string $fileName, string $contents): void
     {
-        if(!file_exists($path)){
+        if (!file_exists($path)) {
             mkdir($path, 0755, true);
         }
 
-        $path = $path.$fileName;
-
-        file_put_contents($path, $contents);
+        file_put_contents($path . $fileName, $contents);
     }
 }

@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace Nakatsinho\MpesaLaravel\Files\Config;
 
@@ -8,11 +8,11 @@ use Nakatsinho\MpesaPhp\interfaces\TransactionResponseInterface;
 
 class ServiceVM
 {
-    protected $transaction;
+    protected Transaction $transaction;
 
-    protected $configPath;
+    protected string $configPath;
 
-    public function __construct(string $configPath = null)
+    public function __construct(?string $configPath = null)
     {
         $this->configPath = $configPath ?? config_path('mpesa.php');
         $this->transaction = new Transaction(Config::loadFromFile($this->configPath));
